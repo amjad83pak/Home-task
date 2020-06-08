@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>Home Task for FrontStory</title>
+
+	<!-- font-awesome CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+	<!-- Styles CSS -->
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+	<section id="carousel">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-4 featured_item">
+						<div class="pf-img"><img src="img/1.png" id="img0"></div>
+					</div>
+					<div class="col-md-4 featured_item">
+						<div class="pf-img"><img src="img/2.png" id="img1"></div>
+					</div>
+					<div class="col-md-4 featured_item">
+						<div class="pf-img"><img src="img/3.png" id="img2"></div>
+					</div>
+					<div class="col-md-4 featured_item" style="display: none;">
+						<div class="pf-img"><img src="img/4.png" id="img3"></div>
+					</div>
+					<div class="col-md-4 featured_item" style="display: none;">
+						<div class="pf-img"><img src="img/5.png" id="img4"></div>
+					</div>
+					<div class="col-md-4 featured_item" style="display: none;">
+						<div class="pf-img"><img src="img/6.png" id="img5"></div>
+					</div>
+					<div class="prev" onclick="left()">
+						<div class="triangle-right" > 
+							<i class="fa fa-angle-left angle-left" style="font-size:26px"></i>
+						</div>
+					</div>
+					<div class="next" onclick="right()">
+						<div class="triangle-left" > 
+							<i class="fa fa-angle-right angle-right" style="font-size:26px"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	<script type="text/javascript">
+		function right(){
+				var firstImgSrc;
+				for(var i=0; i <= 4; i++){
+					var img = document.getElementById('img' + parseInt(i));
+					var nextImg = document.getElementById('img' + parseInt(i + 1));
+					
+					if(i == 0){
+						firstImgSrc = img.src;
+					}
+					img.src = nextImg.src;
+				}
+				var img = document.getElementById('img' + parseInt(i));
+				img.src = firstImgSrc;
+			}
+
+			function left(){
+				var firstImgSrc;
+				for(var i=5; i > 0; i--){
+					var img = document.getElementById('img' + parseInt(i));
+					var nextImg = document.getElementById('img' + parseInt(i - 1));
+					
+					if(i == 5){
+						firstImgSrc = img.src;
+					}
+					img.src = nextImg.src;
+				}
+				var img = document.getElementById('img' + parseInt(i));
+				img.src = firstImgSrc;
+			}
+	</script>
+
+	<!-- jquery-->
+	<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
+	<!-- Bootstrap JS -->
+	<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> -->
+</body>
+</html>
